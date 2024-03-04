@@ -120,6 +120,91 @@ print(f"{a = }, {a = :.1f}, {a = :.2f}")
 
 print(f"Binary: {b:016b}, Hex: {b:04X}")
 
+print("This is a \N{grinning face} day")
+
+#%% Getting input
+ans = input("Enter an integer: ")
+
+print(f"{ans = }, {type(ans) = }")
+
+print(f"10 times of {ans} is {10 * ans}")
+
+if ans.isdigit():
+    print(f"10 times of {ans} is {10 * int(ans)}")
+else:
+    print(f"{ans} is not an integer")
+    
+#%% List join, append and extend
+alist = [1, 2, 3]
+print(f"{alist = }")
+
+alist = alist + [4]
+print(f"{alist = }")
+
+alist += [5]  # similar to alist = alist + [5]
+print(f"{alist = }")
+
+alist.append(6)
+print(f"{alist = }")
+
+alist.extend([7, 8])
+print(f"{alist = }")
+
+print(f"{len(alist) = }")
+
+#%% Sorting of list
+blist = [3, 1, 4, 2, 6, 5, 0]
+clist = sorted(blist)  # return a list sorted in ascending order
+dlist = sorted(blist, reverse=True)  # return a list sorted in descending order
+print(f"{blist = }, {clist = }, {dlist = }")
+
+elist = blist.sort()
+print(f"{blist = }, {elist = }")
+
+flist = [1, 2.5, 'abc', -3, 7.05, [5, 6.78], 'xy' ]
+# print(sorted(flist))  #  cannot sort list with different data types
+
+#%% List methods
+alist = [1, 2, 3.4, 'abc', [5, 6.78], 'yz', 1, 'a']
+
+print(f"{alist.count(1) = }")
+print(f"{alist.count('a') = }")
+print(f"{alist.index(1) = }")  # only return the index of the first occurance
+
+alist.remove(1)
+print(f"{alist = }")
+
+alist.insert(2, 5)
+print(f"{alist = }")
+
+r = alist.pop(3)
+print(f"{r = }, {alist = }")
+
+#%% Dictionary creation and modification
+adict = dict(a=1, b=2.5, c='abc')
+print(f"{adict['b'] = }")
+
+adict['a'] = 3.45
+print(f"{adict = }")
+
+adict['d'] = [1, 2, 3]
+print(f"{adict = }")
+
+del adict['c']
+print(f"{adict = }")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

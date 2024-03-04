@@ -6,5 +6,8 @@
 # E.g.
 # Enter a word: Civic
 # True
-# Enter a string: Python
+# Enter a word: Python
 # False
+
+s = input("Enter a word: ").lower()
+print(s == s[::-1])
