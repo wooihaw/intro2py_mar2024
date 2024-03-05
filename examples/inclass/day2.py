@@ -185,7 +185,29 @@ if all(True if w[0] in 'aeiou' else False for w in words2):
 else:
     print("Not all words start with a vowel.")
 
+#%% Use pickle to store dictionary to a file
+import pickle
 
+data = {}
+ans = 'y'
+while ans.lower() in ('y', 'yes'):
+    name = input("Enter name: ") or "Unknown"
+    age = input("Enter age: ") or "0"
+    data[name] = age
+    ans = input("Do you want to enter another data? ([y]/n) ") or "y"
+
+print(f"{data =  }")
+
+with open("nameage.pkl", "wb") as f:
+    pickle.dump(data, f)
+
+#%% Use pickle to retrieve the dictionary from file
+import pickle
+
+with open("nameage.pkl", "rb") as f:
+    mydata = pickle.load(f)
+
+print(f"{mydata = }")
 
 
 
