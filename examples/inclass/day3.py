@@ -88,6 +88,189 @@ print(f"{sorted(GID) = }")
 sorted_GID = sorted(GID, key=lambda z: (-int(z[1]), int(z[4:])))
 print(f"{sorted_GID = }")
 
+#%% Using map() function
+# Reverse each string in a list
+words = ['apple', 'bell', 'cat', 'door', 'eggs']
+
+# Methods 1 - Use the for loop
+r1 = []
+for w in words:
+    r1.append(w[::-1])
+print(f"{r1 = }")
+
+# Method 2 - Use list comprehension
+r2 = [w[::-1] for w in words]
+print(f"{r2 = }")
+
+# Method 3 - Use map() function
+r3 = list(map(lambda w: w[::-1], words))
+print(f"{r3 = }")
+
+#%% Using filter() function
+# Select only the palindrome  from a list
+words = ('ant', 'boy', 'civic', 'dad', 'fish', 'madam')
+
+# Method 1 - Use the for loop
+p1 = []
+for w in words:
+    if w == w[::-1]:
+        p1.append(w)
+print(f"{p1 = }")
+
+# Method 2 - Use list comprehension
+p2 = [w for w in words if w == w[::-1]]
+print(f"{p2 = }")
+
+# Method 3 - Use filter() function
+p3 = list(filter(lambda w: w == w[::-1], words))
+print(f"{p3 = }")
+
+#%% Functional approach
+
+# Function to add a book
+def add_book(library, book):
+    library.append(book)
+    
+# Function to remove a book
+def remove_book(library, book):
+    if book in library:
+        library.remove(book)
+
+# Function to display the books in the library
+def display_book(library):
+    for book in library:
+        print(book)
+        
+library1 = []
+add_book(library1, 'Harry Porter and the Goblet of Fire')
+add_book(library1, 'Harry Porter and the Deathly Hallows')
+add_book(library1, 'Fantastic Beasts and Where to Find Them')
+display_book(library1)
+remove_book(library1, 'Fantastic Beasts and Where to Find Them')
+display_book(library1)
+
+library2 = []
+add_book(library2, 'Introduction to Python')
+add_book(library2, 'Fluent Python')
+display_book(library2)
+
+#%% OOP approach
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+        
+    def remove_book(self, book):
+        if book in self.books:
+            self.books.remove(book)
+            
+    def display_book(self):
+        for book in self.books:
+            print(book)
+
+library1 = Library()
+library1.add_book('Machine Learning with Python')
+library1.add_book('Deep Learning Fundamentals')
+library1.display_book()
+
+library2 = Library()
+library2.add_book('Physics')
+library2.add_book('Chemistry')
+library2.add_book('Biology')
+library2.add_book('Mathematics')
+library2.display_book()
+
+library2.remove_book('Biology')
+library2.display_book()
+
+print(type(library1))
+
+#%% OOP Example
+class Rectangle:
+    desc = 'This is a rectangle'
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+        self.__secret = "Top secret"  # private attribute
+    def __str__(self):
+        return f"Rectangle with length of {self.length} and width of {self.width}"
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.length})"
+    def area(self):
+        return self.length * self.width
+    def perimeter(self):
+        return 2*self. length + 2*self.width
+    def __gt__(self, other):
+        return self.area() > other.area()
+    def __eq__(self, other):
+        return self.area() == other.area()
+    def reveal_secret(self):
+        return f"The secret is {self.__secret}"
+    
+r1 = Rectangle(2, 3)
+r2 = Rectangle(3, 4)
+print(r1, r2, sep="\n")
+
+rlist = [r1, r2]
+print(rlist)
+
+for r in rlist:
+    print(f"{r}, area: {r.area()}, perimeter:{r.perimeter()}")
+
+if r1 > r2:
+    print(f"{r1} is greater than {r2}")
+else:
+    print(f"{r1} is smaller than {r2}")
+    
+if r1 < r2:
+    print(f"{r1} is smaller than {r2}")
+else:
+    print(f"{r1} is bigger than {r2}")
+    
+r3 = Rectangle(3, 2)
+if r1 == r3:
+    print(f"{r1} is the same as {r3}")
+    
+print(f"Public attribute: {r1.length}")
+
+print(f"Private attribute: {r1.reveal_secret()}")
+
+# Child class
+class Square(Rectangle):
+    def __init__(self, length):
+        super().__init__(length, length)
+    def __str__(self):
+        return f"Square with side of {self.length}"
+    def __reprt__(self):
+        return f"Square({self.length})"
+
+s1 = Square(5)
+s2 = Square(6)
+
+print(s1, s2, sep="\n")
+
+if s1 > s2:
+    print(f"{s1} is greater than {s2}")
+else:
+    print(f"{s1} is smaller than {s2}")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
 
 
 
