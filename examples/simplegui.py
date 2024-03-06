@@ -8,9 +8,9 @@ if infile:
         # Text box to display multiple lines of editable text
         gui.textbox(msg='Showing contents of text file', title='Text file reader', text=mytext)
 
-choices = ('Red', 'Green', 'Blue')
+choices = ('One', 'Two', 'Three')
 # Button box for selection with buttons
-ans1 = gui.buttonbox(msg='Select your choice', title='Button box', choices=choices, default_choice='Red')
+ans1 = gui.buttonbox(msg='Select your choice', title='Button box', choices=choices, default_choice='One')
 # Message box to display a message
 gui.msgbox(msg='You have selected ' + ans1, title='Your selection')
 
